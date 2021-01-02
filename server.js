@@ -14,10 +14,6 @@ db.execute('SELECT * FROM ingredients')
     console.log('error from select statement: ' + error);
   });
 
-app.get('/', (req, res) => {
-  res.send('Running online-ordering-api');
-});
-
 console.log('process.env.NODE_ENV: ' + process.env.NODE_ENV);
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
