@@ -5,16 +5,16 @@ const app = express();
 
 app.use(express.json({ extended: false }));
 
-db.execute('SELECT * FROM ingredients')
-  .then(([rows]) => {
-    console.log('rows: ' + JSON.stringify(rows, null, '\t'));
-    // console.log('fieldData: ' + JSON.stringify(fieldData, null, '\t'));
-  })
-  .catch((error) => {
-    console.log('error from select statement: ' + error);
-  });
+// db.execute('SELECT * FROM ingredients')
+//   .then(([rows]) => {
+//     console.log('rows: ' + JSON.stringify(rows, null, '\t'));
+//   })
+//   .catch((error) => {
+//     console.log('error from select statement: ' + error);
+//   });
 
-console.log('process.env.NODE_ENV: ' + process.env.NODE_ENV);
+app.use('/api/menu', require('./routes/api/menu'));
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
