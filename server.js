@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 
 app.use(express.json({ extended: false }));
+app.use('/api/menu', require('./routes/api/menu'));
 
 // db.execute('SELECT * FROM ingredients')
 //   .then(([rows]) => {
@@ -12,8 +13,6 @@ app.use(express.json({ extended: false }));
 //   .catch((error) => {
 //     console.log('error from select statement: ' + error);
 //   });
-
-app.use('/api/menu', require('./routes/api/menu'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
