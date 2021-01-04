@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import { Fragment } from 'react';
-import Alert from './components/layout/Alert';
-
 import './App.css';
+
+// Components
+import Alert from './components/layout/Alert';
+import OrderPageHome from './components/presentaional/OrderPageHome/OrderPageHome';
 
 function App() {
   return (
@@ -14,7 +16,69 @@ function App() {
       <Router>
         <Fragment>
           <Alert />
-          <div className='App'>Online Ordering App</div>
+          <header>
+            <OrderPageHome />
+          </header>
+          <div className='main'>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            Text at bottom
+          </div>
         </Fragment>
       </Router>
     </Provider>
