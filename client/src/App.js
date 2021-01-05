@@ -20,6 +20,7 @@ function App() {
             <OrderPageHome />
           </header>
           <div className='main'>
+            {/* <br />
             <br />
             <br />
             <br />
@@ -76,8 +77,7 @@ function App() {
             <br />
             <br />
             <br />
-            <br />
-            Text at bottom
+            Text at bottom */}
           </div>
         </Fragment>
       </Router>

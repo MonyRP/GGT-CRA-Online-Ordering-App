@@ -1,0 +1,4 @@
+.navOptContainer {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,5 +1,6 @@
 .navbar {
-  padding: 64px 0 0;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .container {
@@ -7,15 +8,9 @@
   justify-content: space-between;
   align-items: center;
 
-  position: fixed;
-  top: 0;
-
   height: 48px;
-  width: calc(100% - 64px);
-  padding: 8px 32px;
-
-  background-color: #fff;
-  border-bottom: 1px solid #f0f0f0;
+  margin: 0 32px;
+  padding: 8px 0;
 }
 
 .companyDetails {
@@ -43,55 +38,4 @@
 .loginBtn i {
   margin-right: 6px;
   font-size: 15px;
-}
-
-.optionsBtnGroup {
-  display: flex;
-  justify-content: center;
-
-  padding: 4px;
-
-  width: 250px;
-  height: 30px;
-
-  background-color: #f8f8f8;
-  border: #ddd solid 1px;
-  border-radius: 50px;
-}
-
-.pickupBtn {
-  flex-grow: 1;
-
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: inherit;
-
-  color: #6f6f6f;
-  font-weight: 700;
-}
-
-.pickupBtn:hover {
-  color: #fff !important;
-  background-color: rgb(19, 170, 109);
-  border-radius: 25px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.deliveryBtn {
-  flex-grow: 1;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: inherit;
-
-  color: #6f6f6f;
-  font-weight: 700;
-}
-
-.deliveryBtn:hover {
-  color: #fff !important;
-  background-color: rgb(19, 170, 109);
-  border-radius: 25px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }

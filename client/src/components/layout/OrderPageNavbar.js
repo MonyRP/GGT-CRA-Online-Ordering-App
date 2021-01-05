@@ -11,27 +11,15 @@ const OrderPageNavbar = (props) => {
         <div className={s.container}>
           <div className={s.companyDetails}>
             <div className={s.companyName}>Company Name</div>
-            <div className={s.companyAddress}>123 N. Circle St</div>
+            <div className={s.companyAddress}>
+              <i className='fas fa-map-marker-alt'></i>&nbsp;&nbsp;123 N. Circle St
+            </div>
           </div>
 
           <button className={s.loginBtn}>
             <i className='far fa-user'></i>Log in
           </button>
         </div>
-      </div>
-
-      {/* Delivery/Pickup & Category options */}
-      <div className={s.optionsContainer}>
-        <div className={s.optionsBtnGroup}>
-          <button className={s.pickupBtn}>
-            <span>Pickup</span>
-          </button>
-          <button className={s.deliveryBtn}>
-            <span>Delivery</span>
-          </button>
-        </div>
-
-        {/* Categories dropdown */}
       </div>
     </Fragment>
   );

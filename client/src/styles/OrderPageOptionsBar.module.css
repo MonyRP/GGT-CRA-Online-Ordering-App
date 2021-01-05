@@ -1,0 +1,108 @@
+.optionsBar {
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.container {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+
+  height: 48px;
+  margin: 0 128px;
+  padding: 8px 0;
+}
+
+.optionsBtnGroup {
+  display: flex;
+  justify-content: center;
+
+  padding: 4px;
+
+  width: 225px;
+  height: 30px;
+
+  background-color: #f8f8f8;
+  border: #ddd solid 1px;
+  border-radius: 50px;
+}
+
+.forDiv {
+  margin: 0 6px;
+}
+
+.pickupBtn {
+  flex-grow: 1;
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: inherit;
+
+  color: #6f6f6f;
+  font-weight: 700;
+}
+
+.pickupBtn:hover {
+  color: #fff !important;
+  background-color: rgb(19, 170, 109);
+  border-radius: 25px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.deliveryBtn {
+  flex-grow: 1;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: inherit;
+
+  color: #6f6f6f;
+  font-weight: 700;
+}
+
+.deliveryBtn:hover {
+  color: #fff !important;
+  background-color: rgb(19, 170, 109);
+  border-radius: 25px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.calendarDropdown {
+  display: flex;
+  align-items: center;
+
+  height: 30px;
+
+  padding: 18px;
+
+  cursor: pointer;
+  outline: none;
+
+  background-color: #fff;
+  border: #ddd solid 1px;
+  border-radius: 50px;
+
+  color: #333;
+  font-weight: 700;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 235px;
+  height: 24px;
+
+  margin-left: 30px;
+  padding: 0 25px;
+
+  cursor: pointer;
+
+  border-left: #ccc solid 1px;
+  border-right: #ccc solid 1px;
+
+  color: black;
+  font-weight: 700;
+}

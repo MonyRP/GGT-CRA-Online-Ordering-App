@@ -1,15 +1,21 @@
 import React from 'react';
+import { Fragment } from 'react';
+
 import PropTypes from 'prop-types';
-import styles from '../../../styles/OrderPageHome.module.css';
+import s from '../../../styles/OrderPageHome.module.css';
 
 // Components
-import OrderPageNavbar from '../../layout/OrderPageNavbar.js';
+import OrderPageNavbar from '../../layout/OrderPageNavbar';
+import OrderPageOptionsBar from '../../layout/OrderPageOptionsBar';
 
 const OrderPageHome = (props) => {
   return (
-    <div>
-      <OrderPageNavbar />
-    </div>
+    <Fragment>
+      <div className={s.navOptContainer}>
+        <OrderPageNavbar />
+        <OrderPageOptionsBar />
+      </div>
+    </Fragment>
   );
 };
 
