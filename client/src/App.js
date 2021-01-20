@@ -7,7 +7,6 @@ import { Fragment } from 'react';
 import './App.css';
 
 // Components
-import Alert from './components/layout/Alert';
 import OrderPageHome from './components/presentaional/OrderPageHome/OrderPageHome';
 
 function App() {
@@ -15,69 +14,10 @@ function App() {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Alert />
           <header>
             <OrderPageHome />
           </header>
           <div className='main'>
-            {/* <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            Text at bottom */}
           </div>
         </Fragment>
       </Router>

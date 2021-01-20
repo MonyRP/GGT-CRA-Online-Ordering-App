@@ -5,8 +5,14 @@
 
 .mainSection{
   display:flex;
-  margin: 0 7%;
+  margin: 30px 7%;
 
+}
+
+.menuContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .tempCheckout{

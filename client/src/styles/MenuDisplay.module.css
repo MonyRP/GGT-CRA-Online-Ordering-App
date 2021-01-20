@@ -1,20 +1,22 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
+.menuItemsContainer {
+  display: grid;
+
+  grid-template-columns: 330px 330px;
+  grid-gap: 20px;
 
   padding: 0 35px;
+  margin-bottom: 25px;
 }
-
-
 
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
-  width: 275px;
+  /* width: 275px; */
   height: 100px;
 
-  margin: 20px 20px;
+  /* margin: 20px 20px; */
   padding: 20px;
 
   border: #ccc solid 0.75px;
