@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 // import { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import s from '../../styles/MenuDisplay.module.css';
@@ -7,7 +7,6 @@ const MenuDisplay = (props) => {
   const [lastCategory, setLastCategory] = useState('');
 
   return (
-    <Fragment>
       <div className={s.menuItemsContainer}>
         {props.meals.map((meal, index) => (
           <div className={s.card} key={index}>
@@ -17,7 +16,6 @@ const MenuDisplay = (props) => {
           </div>
         ))}
       </div>
-    </Fragment>
   );
 };
 

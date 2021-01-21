@@ -14,11 +14,10 @@ function App() {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <header>
+          <div>
             <OrderPageHome />
-          </header>
-          <div className='main'>
           </div>
+          <div className='main'></div>
         </Fragment>
       </Router>
     </Provider>

@@ -35,7 +35,9 @@ const OrderPageHome = (props) => {
             </div>
           ))}
         </div>
-        <div className={s.tempCheckout}></div>
+        <div className={s.tempCheckoutContainer}>
+          <div className={s.tempSummary}></div>
+        </div>
       </div>
     </Fragment>
   );
