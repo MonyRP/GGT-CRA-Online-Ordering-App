@@ -30,7 +30,7 @@ const OrderPageHome = (props) => {
         <div className={s.menuContainer}>
           {meals.map((menu) => (
             <div>
-              <h2>{menu.category}</h2>
+              <h2 className={s.category}>{menu.category}</h2>
               <MenuDisplay meals={menu.items} />
             </div>
           ))}
