@@ -1,9 +1,18 @@
 import React from 'react';
-import { Fragment } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import s from '../../styles/OrderPageOptionsBar.module.css';
 
-const OrderPageOptionsBar = (props) => {
+const OrderPageOptionsBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/menu/menu-categories').then(res => {
+      setCategories(res.data);
+    });
+  }, []);
+
   return (
     <Fragment>
       {/* Delivery/Pickup & Category options */}

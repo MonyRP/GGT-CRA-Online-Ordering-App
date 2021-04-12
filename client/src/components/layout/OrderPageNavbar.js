@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import s from '../../styles/OrderPageNavbar.module.css';
 
-const OrderPageNavbar = (props) => {
+const OrderPageNavbar = ({openLoginModal}) => {
   return (
     <Fragment>
       {/* Navbar */}
@@ -16,7 +16,7 @@ const OrderPageNavbar = (props) => {
             </div>
           </div>
 
-          <button className={s.loginBtn}>
+          <button className={s.loginBtn} onClick={openLoginModal}>
             <i className='far fa-user'></i>Log in
           </button>
         </div>
