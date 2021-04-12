@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fragment, useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 import PropTypes from 'prop-types';
@@ -10,17 +11,32 @@ import OrderPageNavbar from '../../layout/OrderPageNavbar';
 import OrderPageOptionsBar from '../../layout/OrderPageOptionsBar';
 import MenuDisplay from '../../presentaional/MenuDisplay';
 import Login from '../../containers/Login';
+import SignUp from '../../containers/SignUp';
 
-const OrderPageHome = () => {
+// Actions
+import { logOutUser } from '../../../actions/user';
+import { LOGOUT_USER } from '../../../actions/types';
+
+const OrderPageHome = ({ logOutUser, userLoggedIn }) => {
   const [meals, setMeals] = useState([]);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
 
   useEffect(() => {
     axios.get('/api/menu/menu-items').then(res => {
-      console.log('res from useEffect: ', res.data);
       setMeals(res.data);
     });
   }, []);
+
+  // Open sign up modal
+  const openSignUpModal = () => {
+    setShowSignUpModal(true);
+  };
+
+  // Close sign up modal
+  const closeSignUpModal = () => {
+    setShowSignUpModal(false);
+  };
 
   // Open login modal
   const openLoginModal = () => {
@@ -32,11 +48,21 @@ const OrderPageHome = () => {
     setShowLoginModal(false);
   };
 
+  const logOutCurrentUser = () => {
+    logOutUser({ type: LOGOUT_USER });
+  };
+
   return (
     <Fragment>
+      {showSignUpModal && <SignUp closeSignUpModal={closeSignUpModal} />}
       {showLoginModal && <Login closeLoginModal={closeLoginModal} />}
       <div className={s.navOptContainer}>
-        <OrderPageNavbar openLoginModal={openLoginModal} />
+        <OrderPageNavbar
+          openSignUpModal={openSignUpModal}
+          openLoginModal={openLoginModal}
+          userLoggedIn={userLoggedIn}
+          logOutCurrentUser={logOutCurrentUser}
+        />
         <OrderPageOptionsBar />
       </div>
 
@@ -57,6 +83,11 @@ const OrderPageHome = () => {
   );
 };
 
+const mapStateToProps = state => {
+  console.log('mapStateToProps state:', JSON.stringify(state,null,2));
+  return { userLoggedIn: state.user.userLoggedIn };
+};
+
 OrderPageHome.propTypes = {};
 
-export default OrderPageHome;
+export default connect(mapStateToProps, { logOutUser })(OrderPageHome);

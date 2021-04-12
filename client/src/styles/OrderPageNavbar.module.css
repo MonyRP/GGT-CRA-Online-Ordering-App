@@ -13,9 +13,6 @@
   padding: 8px 0;
 }
 
-.companyDetails {
-}
-
 .companyName {
   color: #181818;
   font-family: Montserrat, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -24,18 +21,42 @@
   margin-bottom: 4px;
 }
 
-.companyAddress {
+.authenticationSection{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .loginBtn {
+  margin-right: 10px;
+
   cursor: pointer;
   border: none;
   outline: none;
   background-color: inherit;
+  color: #381f7a;
   font-weight: 700;
+
 }
 
 .loginBtn i {
   margin-right: 6px;
-  font-size: 15px;
+  font-size: 20px;
+  color: #381f7a;
 }
+
+.signUpBtn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: #381f7a;
+  font-weight: 700;
+}
+
+.signUpBtn i {
+  margin-right: 6px;
+  font-size: 20px;
+  color: #381f7a;
+}
+
