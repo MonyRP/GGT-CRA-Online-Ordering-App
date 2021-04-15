@@ -1,10 +1,18 @@
-const mysql = require('mysql2');
+const mongoose = require('mongoose');
+const config = require('config');
+const db = config.get('mongoURI');
 
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  database: 'test',
-  password: '22221111'
-});
+const connectDB = async () => {
+  try {
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log('MongoDB connected');
+  } catch (error) {
+    console.log(error.message);
+    process.exit(1);
+  }
+};
 
-module.exports = pool.promise();
+module.exports = connectDB;
