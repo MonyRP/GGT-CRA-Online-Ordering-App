@@ -14,7 +14,7 @@ import Login from '../../containers/Login';
 import SignUp from '../../containers/SignUp';
 
 // Actions
-import { logOutUser } from '../../../actions/user';
+import { logOutUser } from '../../../actions/auth';
 import { LOGOUT_USER } from '../../../actions/types';
 
 const OrderPageHome = ({ logOutUser, userLoggedIn }) => {
@@ -84,8 +84,8 @@ const OrderPageHome = ({ logOutUser, userLoggedIn }) => {
 };
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps state:', JSON.stringify(state,null,2));
-  return { userLoggedIn: state.user.userLoggedIn };
+  console.log('mapStateToProps state:', JSON.stringify(state, null, 2));
+  return { userLoggedIn: state.auth.userLoggedIn };
 };
 
 OrderPageHome.propTypes = {};

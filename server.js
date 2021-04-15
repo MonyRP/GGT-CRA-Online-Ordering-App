@@ -5,14 +5,15 @@ const app = express();
 
 app.use(express.json({ extended: false }));
 app.use('/api/menu', require('./routes/api/menu'));
+app.use('/api/users', require('./routes/api/users'));
 
-// db.execute('SELECT * FROM ingredients')
-//   .then(([rows]) => {
-//     console.log('rows: ' + JSON.stringify(rows, null, '\t'));
-//   })
-//   .catch((error) => {
-//     console.log('error from select statement: ' + error);
-//   });
+db.execute('SELECT * FROM test1')
+  .then(([rows]) => {
+    console.log('rows: ' + JSON.stringify(rows, null, '\t'));
+  })
+  .catch((error) => {
+    console.log('error from select statement: ' + error);
+  });
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

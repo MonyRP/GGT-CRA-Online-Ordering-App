@@ -1,10 +1,34 @@
 import React from 'react';
-import s from '../../styles/SignUp.module.css';
+import { useState } from 'react';
 
-const SignUp = ({ closeSignUpModal }) => {
+import s from '../../styles/SignUp.module.css';
+import { connect } from 'react-redux';
+import { signUpUser } from '../../actions/auth';
+
+const SignUp = ({ closeSignUpModal, signUpUser }) => {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
+
+  const { username, email, password } = formData;
+
+  const onChange = event => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+
+    // console.log('SignUp event: ', JSON.stringify(event, null, 2));
+    signUpUser({ username, email, password });
+    closeSignUpModal();
+  };
+
   return (
     <div className={s.modal}>
-      <form className={`${s.modalContent} ${s.animate}`} action='/action_page.php' method='post'>
+      <form className={`${s.modalContent} ${s.animate}`} onSubmit={e => onSubmit(e)}>
         <div className={s.imgcontainer}>
           <span onClick={closeSignUpModal} className={s.close} title='Close Modal'>
             &times;
@@ -13,25 +37,42 @@ const SignUp = ({ closeSignUpModal }) => {
         </div>
 
         <div className={s.container}>
-          <label htmlFor='uname'>
+          <label htmlFor='username'>
             <b>Username</b>
           </label>
           <input
             className={s.textAndPasswordInput}
             type='text'
             placeholder='Enter Username'
-            name='uname'
+            name='username'
+            value={username}
+            onChange={e => onChange(e)}
             required
           />
 
-          <label htmlFor='psw'>
+          <label htmlFor='email'>
+            <b>Email</b>
+          </label>
+          <input
+            className={s.textAndPasswordInput}
+            type='text'
+            placeholder='Enter Email Address'
+            name='email'
+            value={email}
+            onChange={e => onChange(e)}
+            required
+          />
+
+          <label htmlFor='password'>
             <b>Password</b>
           </label>
           <input
             className={s.textAndPasswordInput}
             type='password'
             placeholder='Enter Password'
-            name='psw'
+            name='password'
+            value={password}
+            onChange={e => onChange(e)}
             required
           />
 
@@ -56,4 +97,4 @@ const SignUp = ({ closeSignUpModal }) => {
   );
 };
 
-export default SignUp;
+export default connect(null, { signUpUser })(SignUp);
