@@ -84,7 +84,6 @@ const OrderPageHome = ({ logOutUser, userLoggedIn }) => {
 };
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps state:', JSON.stringify(state, null, 2));
   return { userLoggedIn: state.auth.userLoggedIn };
 };
 

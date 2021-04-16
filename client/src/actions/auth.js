@@ -1,5 +1,6 @@
 import { LOGIN_USER, LOGOUT_USER, SIGNUP_USER, SIGNUP_USER_FAILED } from './types';
 import axios from 'axios';
+import { setAlert } from './alert';
 
 export const signUpUser = ({ username, email, password }) => async dispatch => {
   const config = {
@@ -13,17 +14,12 @@ export const signUpUser = ({ username, email, password }) => async dispatch => {
   try {
     const response = await axios.post('/api/users/signup-user', body, config);
 
-    console.log('signUpUser => response.data: ', JSON.stringify(response, null, 2));
-
     dispatch({
       type: SIGNUP_USER,
       payload: response.data
     });
-    
   } catch (error) {
-    dispatch({
-      type: SIGNUP_USER_FAILED
-    });
+    dispatch(setAlert(error.response.data.message, 'error'));
   }
 };
 

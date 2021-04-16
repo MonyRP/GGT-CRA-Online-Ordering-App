@@ -1,11 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
-
-import s from '../../styles/SignUp.module.css';
 import { connect } from 'react-redux';
 import { signUpUser } from '../../actions/auth';
+import { setAlert } from '../../actions/alert';
+import s from '../../styles/SignUp.module.css';
 
-const SignUp = ({ closeSignUpModal, signUpUser }) => {
+// Components
+import Alert from '../layout/Alert';
+
+const SignUp = ({ closeSignUpModal, signUpUser, userSignUpErrorMessage, setAlert }) => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -21,22 +24,22 @@ const SignUp = ({ closeSignUpModal, signUpUser }) => {
   const onSubmit = event => {
     event.preventDefault();
 
-    // console.log('SignUp event: ', JSON.stringify(event, null, 2));
     signUpUser({ username, email, password });
-    closeSignUpModal();
   };
 
   return (
     <div className={s.modal}>
       <form className={`${s.modalContent} ${s.animate}`} onSubmit={e => onSubmit(e)}>
         <div className={s.imgcontainer}>
-          <span onClick={closeSignUpModal} className={s.close} title='Close Modal'>
+          <span onClick={closeSignUpModal} className={s.close} title='Close'>
             &times;
           </span>
           {/* <img src="img_avatar2.png" alt="Avatar" className="avatar"> */}
         </div>
-
         <div className={s.container}>
+          <div className={s.alertContainer}>
+            <Alert />
+          </div>
           <label htmlFor='username'>
             <b>Username</b>
           </label>
@@ -83,18 +86,13 @@ const SignUp = ({ closeSignUpModal, signUpUser }) => {
             <input type='checkbox' name='remember' /> Remember me
           </label>
         </div>
-
-        <div className={s.container}>
-          <button className={s.btn} type='button' className={s.cancelbtn}>
-            Cancel
-          </button>
-          <span className={s.psw}>
-            Forgot <a href='#'>password?</a>
-          </span>
-        </div>
       </form>
     </div>
   );
 };
 
-export default connect(null, { signUpUser })(SignUp);
+const mapStateToProps = state => {
+  return { userSignUpErrorMessage: state.auth.userSignUpErrorMessage };
+};
+
+export default connect(mapStateToProps, { signUpUser, setAlert })(SignUp);

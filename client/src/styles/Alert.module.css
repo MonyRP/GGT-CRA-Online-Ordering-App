@@ -1,0 +1,12 @@
+.alert {
+  width: 90%;
+  font-size: 15px;
+  padding: 10px;
+  margin: 4px;
+  text-align: center;
+
+  border-radius: 4px;
+
+  color: white;
+  background-color: rgb(230, 107, 107);
+}

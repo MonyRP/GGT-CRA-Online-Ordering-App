@@ -26,14 +26,15 @@ router.post('/signup-user', async (req, res) => {
 
       res.status(200).send('User credential saved successfuly.');
     } else {
-      console.log('sending 200;');
-      res.status(400).send('Server error. User credential already already exists.');
+      console.log('sending 400;');
+      res.status(400).json({
+        status: 'error',
+        message: 'Server error. User credential already already exists.'
+      });
     }
-    
   } catch (error) {
     console.log('/signup-user: ' + error);
   }
-
 });
 
 module.exports = router;

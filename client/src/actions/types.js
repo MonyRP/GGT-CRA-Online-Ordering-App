@@ -4,6 +4,5 @@ export const REMOVE_ALERT = 'REMOVE_ALERT';
 
 // Types for User
 export const SIGNUP_USER = 'SIGNUP_USER';
-export const SIGNUP_USER_FAILED = 'SIGNUP_USER_FAILED';
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';

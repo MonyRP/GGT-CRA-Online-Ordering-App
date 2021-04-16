@@ -46,6 +46,13 @@
   padding: 16px;
 }
 
+.alertContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .psw {
   float: right;
   padding-top: 16px;
